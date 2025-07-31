@@ -2,7 +2,7 @@ import '../src/css/ress.css';
 import '../src/css/diagnosis.css';
 
 //画像指定
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../public/img/logo.svg';
 import arrowWhite from '../public/img/arrow.svg';
