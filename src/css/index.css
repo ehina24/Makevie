@@ -1,0 +1,14 @@
+/*変数指定場所*/
+:root{
+    --font-xs:12px;
+    --font-sm:16px;
+    --font-base:20px;
+    --font-md:24px;
+    --font-lg:32px;
+    --font-xl:40px;
+}
+
+body{
+    background-color: #FAFAF5;
+    color: #444;
+}

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 40px;
+}
+
+
+
+.backArrow{
+    background-color: #EACFD1;
+    transform: rotate(-90deg);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+.makeupWrap{
+    background-color: #EACFD1;
+    width: 50%;
+    height: 100vh;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 320px;
+    font-family: "Lora",sans-serif;
+    h2{
+        color: #FFF;
+        font-size: 3rem;
+        font-weight: 400;
+        margin-top: 130px;
+    }
+    li{
+        list-style: none;
+        margin-bottom: 100px;
+    }
+    a{
+        color: #FFF;
+        text-decoration: none;
+        font-size: var(--font-md);
+
+    }
+    li:last-child{
+        margin-bottom: none;
+    }
+    button{
+        color: #FFF;
+        text-decoration: none;
+        font-size: var(--font-md);
+    }
+    a:hover{
+        border-bottom: solid 3px #FFF;
+    }
+    button:hover{
+        border-bottom: solid 3px #FFF;
+    }
+}

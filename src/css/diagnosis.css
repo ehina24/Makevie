@@ -1,0 +1,24 @@
+.question{
+    button{
+        font-size: var(--font-md);
+        color: #444;
+        display: block;
+    }
+}
+.question button.selected-option {
+    border-bottom: #E7CDCF solid 3px;
+}
+
+.btnWrap{
+    display: flex;
+    gap: 120px;
+    margin-top: 72px;
+    justify-content: center;
+}
+.resultBtn{
+    color: #C23B55;
+    font-size: var(--font-lg);
+    font-weight: bold;
+    display: block;
+    margin: 140px auto 0;
+}
