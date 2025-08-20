@@ -36,7 +36,7 @@ function INFORMATION(){
                         <button className='narrowDown'>絞り込み</button>
                     </div>
 
-                    <h3>NEW</h3>
+                    <h3 className='new'>NEW</h3>
                 <div className='topWrap'>
                     <div>
                         <img src={newsImg1} alt="情報1" />
