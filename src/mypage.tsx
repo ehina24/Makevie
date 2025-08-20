@@ -11,6 +11,7 @@ import cosmeIcon from '../public/img/cosme-icon.svg';
 import heartIcon from '../public/img/heart-icon.svg';
 import eyeIcon from '../public/img/eye-icon.svg';
 import thumbnailPink from '../public/img/thumbnail-pink.svg';
+import graph from '../public/img/graph.svg';
 
 
 
@@ -53,7 +54,7 @@ function MYPAGE(){
                                 <img src={cosmeIcon} alt="コスメアイコン" />
                                 <p>コスメ・用具辞典</p>
                             </div>
-                            </div>
+                        </div>
                         <div className='profileItem'>
                             <img src={heartIcon} alt="ハートアイコン" />
                             <p>いいねしたコスメ</p>
@@ -62,14 +63,18 @@ function MYPAGE(){
                 </div>
             </div>
             <h2>一週間ミッションの達成度</h2>
-            
-            <p>今学んでいるパーツ</p>
-            <p>レベル2</p>
-            <p>アイメイク</p>
-            <img src={eyeIcon} alt="目アイコン" />
-            <p>次の動画は・・・</p>
-            <img src={thumbnailPink} alt="ピンクサムネイル" />
-            <p><span>2</span>日目</p>
+            <div className='oneweekMission'>
+                <img src={graph} alt="グラフ" className='graph'/>
+                <div className='oneweekMissionContent'>
+                    <p className='learnParts'>今学んでいるパーツ</p>
+                    <p className='level'>レベル2</p>
+                    <p className='makeup'>アイメイク</p>
+                    <img src={eyeIcon} alt="目アイコン" />
+                    <p className='nextMovie'>次の動画は・・・</p>
+                    <img src={thumbnailPink} alt="ピンクサムネイル" />
+                    <p className='progress'><span>2</span>日目</p>
+                </div>
+            </div>
         </div>
 
             <div className='scrollToTop' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>

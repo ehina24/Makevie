@@ -22,3 +22,13 @@
     align-items: center;
     gap: 120px;
 }
+
+h2{
+    text-align: left;
+}
+.graph{
+    margin-top: 80px;
+}
+.oneweekMission{
+    display: flex;
+}
