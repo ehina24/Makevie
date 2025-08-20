@@ -62,7 +62,7 @@ function MYPAGE(){
                     </div>
                 </div>
             </div>
-            <h2>一週間ミッションの達成度</h2>
+            <h2 className='achievementWrap'>一週間ミッションの達成度</h2>
             <div className='oneweekMission'>
                 <img src={graph} alt="グラフ" className='graph'/>
                 <div className='oneweekMissionContent'>
