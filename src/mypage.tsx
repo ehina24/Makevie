@@ -10,7 +10,7 @@ import noteIcon from '../public/img/note-icon.svg';
 import cosmeIcon from '../public/img/cosme-icon.svg';
 import heartIcon from '../public/img/heart-icon.svg';
 import eyeIcon from '../public/img/eye-icon.svg';
-import thumbnailPink from '../public/img/thumbnail-pink.svg';
+import thumbnaiTwodays from '../public/img/thumbnail-twodays.svg';
 import graph from '../public/img/graph.svg';
 
 
@@ -67,12 +67,15 @@ function MYPAGE(){
                 <img src={graph} alt="グラフ" className='graph'/>
                 <div className='oneweekMissionContent'>
                     <p className='learnParts'>今学んでいるパーツ</p>
-                    <p className='level'>レベル2</p>
-                    <p className='makeup'>アイメイク</p>
-                    <img src={eyeIcon} alt="目アイコン" />
-                    <p className='nextMovie'>次の動画は・・・</p>
-                    <img src={thumbnailPink} alt="ピンクサムネイル" />
-                    <p className='progress'><span>2</span>日目</p>
+                    <div className='partsWrap'>
+                        <p className='level'>レベル2</p>
+                        <p className='makeup'>アイメイク</p>
+                        <img src={eyeIcon} alt="目アイコン" />
+                    </div>
+                    <div className='movieWrap'>
+                        <p className='nextMovie'>次の動画は・・・</p>
+                        <img src={thumbnaiTwodays} alt="２日目サムネイル" />
+                    </div>
                 </div>
             </div>
         </div>
