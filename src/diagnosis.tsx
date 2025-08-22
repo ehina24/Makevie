@@ -3,9 +3,10 @@ import '../src/css/diagnosis.css';
 
 //画像指定
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../public/img/logo.svg';
 import arrowWhite from '../public/img/arrow.svg';
+import RESULT from './result';
 
 
 function DIAGNOSIS(){
@@ -18,13 +19,46 @@ function DIAGNOSIS(){
     };
 
     const [selectedOptions, setSelectedOptions] = useState<SelectedOptionsState>({});
+    const navigate =useNavigate();
 
     const handleOptionClick = (questionId: QuestionId, option: OptionValue) => {
         setSelectedOptions(prevOptions => ({
             ...prevOptions,
             [questionId]: option
         }));
-    };    return(
+    }; 
+    
+    //結果
+    const handleResult =()=>{
+        const values=Object.values(selectedOptions);
+
+        if(values.length<5){
+            alert("全ての質問に答えてください")
+            return;
+        }
+
+        const countA=values.filter(v=>v==='A').length;
+        const countB=values.filter(v=>v==='B').length;
+
+        let resultType: "A" | "B" | "C" | "D";
+
+        if(countA>=4){
+            resultType="A";
+        }
+        else if(countB>=4){
+            resultType="B";
+        }
+        else if(countA===countB){
+            resultType="C";
+        }
+        else{
+            resultType="D";
+        }
+
+        navigate("/result",{state:{type:resultType}});
+    };
+    
+    return(
         <>
 
         <div className='contentWrap'>
@@ -95,7 +129,7 @@ function DIAGNOSIS(){
                     </div>
                 </div>
 
-                <button className='resultBtn'>結果を確認する</button>
+                <button className='resultBtn' onClick={handleResult}>結果を確認する</button>
             </div>
 
             <div className='scrollToTop' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>

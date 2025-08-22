@@ -4,6 +4,7 @@ import MISSION from "./mission"
 import MISSION2 from "./mission2"
 import INFORMATION from "./information"
 import DIAGNOSIS from "./diagnosis"
+import RESULT from "./result"
 import MYPAGE from "./mypage"
 import VIRTUAL from "./virtual"
 import VIRTUAL2 from "./virtual2"
@@ -19,6 +20,7 @@ function App(){
             <Route path="/virtual" element={<VIRTUAL />} />
             <Route path="/virtual2" element={<VIRTUAL2 />} />
             <Route path="/diagnosis" element={<DIAGNOSIS />} />
+            <Route path="/result" element={<RESULT />} />
             <Route path="/mypage" element={<MYPAGE />} />
         </Routes>
         </>
