@@ -27,23 +27,23 @@ function VIRTUAL2() {
     loadModels();
     }, []);
 
-    useEffect(() => {
-        const detectFace = async () => {
+useEffect(() => {
+    const detectFace = async () => {
         if (!capturedImage || !imageRef.current) {
-        setDetections(null);
-        return;
+            setDetections(null);
+            return;
         }
         const detection = await faceapi
-        .detectSingleFace(imageRef.current, new faceapi.TinyFaceDetectorOptions())
-        .withFaceLandmarks(true);
+            .detectSingleFace(imageRef.current, new faceapi.TinyFaceDetectorOptions())
+            .withFaceLandmarks(true);
         if (detection?.landmarks) {
-        setDetections(detection.landmarks);
+            setDetections(detection.landmarks);
         } else {
-        setDetections(null);
+            setDetections(null);
         }
     };
     detectFace();
-    }, [capturedImage]);
+}, [capturedImage]);
 
     const capture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot();
@@ -89,6 +89,10 @@ function VIRTUAL2() {
         y: (nose[6].y + jaw[13].y) / 2,
     };
     };
+
+
+console.log(detections);
+
 
     return (
     <>
@@ -175,8 +179,8 @@ function VIRTUAL2() {
                     />
                     <div
                     style={{
-                        marginTop: '20px',
-                        marginBottom: '20px',
+                        marginTop: '0',
+                        marginBottom: '10px',
                         display: 'flex',
                         gap: '16px',
                     }}
@@ -205,68 +209,15 @@ function VIRTUAL2() {
                     <img
                     src={capturedImage}
                     alt='撮影画像'
-                    style={{ maxWidth: '100%', display: 'block' }}
+                    style={{ 
+                        width: '100%',
+                        height: 'auto',
+                        objectFit: 'cover',
+                        borderRadius: '10px',
+                        display: 'block' }}
                     />
 
-                    {detections && (() => {
-                    const mouth = getMouthCoords();
-                    if (!mouth) return null;
-                    return (
-                        <div
-                        style={{
-                            position: 'absolute',
-                            left: mouth.x,
-                            top: mouth.y,
-                            width: mouth.width * 1.3,
-                            height: mouth.height * 0.8,
-                            backgroundColor: 'rgba(255, 0, 0, 0.9)',
-                            borderRadius: '60% / 50%',
-                            transform: 'translate(-50%, -50%)',
-                            pointerEvents: 'none',
-                        }}
-                        />
-                    );
-                    })()}
 
-                    {detections && (() => {
-                    const leftCheek = getLeftCheekCoords();
-                    if (!leftCheek) return null;
-                    return (
-                        <div
-                        style={{
-                            position: 'absolute',
-                            left: leftCheek.x,
-                            top: leftCheek.y,
-                            width: 70,
-                            height: 70,
-                            backgroundColor: 'rgba(255, 192, 203, 0.8)',
-                            borderRadius: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            pointerEvents: 'none',
-                        }}
-                        />
-                    );
-                    })()}
-
-                    {detections && (() => {
-                    const rightCheek = getRightCheekCoords();
-                    if (!rightCheek) return null;
-                    return (
-                        <div
-                        style={{
-                            position: 'absolute',
-                            left: rightCheek.x,
-                            top: rightCheek.y,
-                            width: 70,
-                            height: 70,
-                            backgroundColor: 'rgba(255, 192, 203, 0.8)',
-                            borderRadius: '50%',
-                            transform: 'translate(-50%, -50%)',
-                            pointerEvents: 'none',
-                        }}
-                        />
-                    );
-                    })()}
 
                     <div
                     style={{
@@ -274,6 +225,7 @@ function VIRTUAL2() {
                         marginBottom: '20px',
                         display: 'flex',
                         gap: '16px',
+                        justifyContent:'center'
                     }}
                     >
                     <button onClick={() => setMode('camera')}>もう一度撮影</button>

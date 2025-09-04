@@ -1,1 +1,31 @@
+.resultWrap{
+    text-align: center;
+}
+.resultWrap p{
+    font-size: var(--font-base);
+    max-width: 600px;
+    text-align: center;
+    margin: 40px auto 0 auto;
+}
 
+
+.titleWrap{
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    margin-top: 64px;
+}
+
+.resultImg{
+    width: 300px;
+    height: auto;
+}
+
+.tryAgain{
+    display: inline-block;
+    font-size: var(--font-base);
+    color: #C23B55;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 64px;
+}

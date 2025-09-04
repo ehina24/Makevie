@@ -27,10 +27,10 @@
     margin: 80px auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    gap: 320px;
+    gap: 160px;
     font-family: "Lora",sans-serif;
     h2{
         color: #FFF;

@@ -54,10 +54,12 @@ console.log(location.state)
     return (
         <div className="resultWrap">
             <h2>診断結果</h2>
-            <h3>{result.title}</h3>
-            <img src={result.image} alt={result.title} />
+            <div className="titleWrap">
+                <h3>{result.title}</h3>
+                <img className="resultImg" src={result.image} alt={result.title}/>
+            </div>
             <p>{result.desc}</p>
-            <Link to="/diagnosis">もう一度診断する</Link>
+            <Link to="/diagnosis" className="tryAgain">もう一度診断する</Link>
         </div>
     );
 }
