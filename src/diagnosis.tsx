@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../public/img/logo.svg';
 import arrowWhite from '../public/img/arrow.svg';
-import RESULT from './result';
 
 
 function DIAGNOSIS(){

@@ -12,7 +12,7 @@ import arrowWhite from '../public/img/arrow.svg';
 function VIRTUAL2() {
     const [mode, setMode] = useState<'select' | 'camera' | 'result'>('select');
     const [capturedImage, setCapturedImage] = useState<string | null>(null);
-    const [detections, setDetections] = useState<faceapi.FaceLandmarks68 | null>(null);
+    const [, setDetections] = useState<faceapi.FaceLandmarks68 | null>(null);
     const webcamRef = useRef<Webcam>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -53,45 +53,6 @@ useEffect(() => {
     }
     }, []);
 
-    const getMouthCoords = () => {
-    if (!detections) return null;
-    const mouth = detections.getMouth();
-    const xs = mouth.map(p => p.x);
-    const ys = mouth.map(p => p.y);
-    const minX = Math.min(...xs);
-    const maxX = Math.max(...xs);
-    const minY = Math.min(...ys);
-    const maxY = Math.max(...ys);
-    return {
-        x: (minX + maxX) / 2,
-        y: (minY + maxY) / 2,
-        width: maxX - minX,
-        height: maxY - minY,
-    };
-    };
-
-    const getLeftCheekCoords = () => {
-    if (!detections) return null;
-    const nose = detections.getNose();
-    const jaw = detections.getJawOutline();
-    return {
-        x: (nose[0].x + jaw[3].x) / 2,
-        y: (nose[0].y + jaw[3].y) / 2,
-    };
-    };
-
-    const getRightCheekCoords = () => {
-    if (!detections) return null;
-    const nose = detections.getNose();
-    const jaw = detections.getJawOutline();
-    return {
-        x: (nose[6].x + jaw[13].x) / 2,
-        y: (nose[6].y + jaw[13].y) / 2,
-    };
-    };
-
-
-console.log(detections);
 
 
     return (
