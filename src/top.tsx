@@ -27,7 +27,6 @@ function TOP() {
   return (
     <>
       <div className='contentWrap'>
-
         <div className='content'>
           <h1><Link to="/"><img src={logo} alt="ロゴ" /></Link></h1>
 
